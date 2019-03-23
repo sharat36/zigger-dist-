@@ -1,22 +1,18 @@
 import React from 'react';
-import { Alert, Platform, StyleSheet, Text, View, Image, Button } from 'react-native';
+import { Alert, Platform, StyleSheet, Text, View, Image, Button, ImageBackground } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default class HomeScreen extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <LinearGradient
-      colors={['#24c6dc', '#514a9d']}
-      start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 1.0}}
-      style={styles.container}>
-
+      <ImageBackground source={require('./images/react-native-css-gradientsad.png')} style={styles.container}>
         <Text style={styles.header1}>Welcome to Zigger!</Text>
+        <Text style={styles.header1}>Distributor App</Text>
 
         <View style={styles.btnContainer}>
           <Button
             title="Login"
-            color = 'black'
             onPress={() => navigate('Login')}
           />
         </View>
@@ -26,12 +22,11 @@ export default class HomeScreen extends React.Component {
         <View style={styles.btnContainer}>
           <Button
             title="SignUp"
-            color = 'black'
             onPress={() => navigate('Signup')}
           />
         </View>
 
-      </LinearGradient>
+      </ImageBackground>
     );
   }
 
@@ -54,7 +49,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   btnContainer: {
-    padding: 20,
+    padding: 20, 
     width: 200,
   },
 });

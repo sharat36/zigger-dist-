@@ -64,7 +64,6 @@ export default class LoginScreen extends React.Component {
         <View style={styles.btnContainer}>
           <Button
             title="Login"
-            color='black'
             disabled={this.state.disabled}
             onPress={this._onLogin}
           />

@@ -17,6 +17,14 @@ export default class UserList extends Component{
           this.cuser = JSON.parse(JSON.stringify(this.props.navigation.getParam('user')));
 
      }
+
+     static navigationOptions = () => ({
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: 'black'
+          },
+        });
+      
      componentDidMount = () =>{
           firebase.database().ref('distributors').orderByChild('email').equalTo(this.cuser.email).once('value')
          .then((cdistributor) => {
@@ -33,10 +41,10 @@ export default class UserList extends Component{
 
           return(
                <LinearGradient
-               colors={['#00FFFF', '#17C8FF', '#329BFF', '#4C64FF', '#6536FF', '#8000FF']}
+               colors={['#000428', '#004e92']}
                start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 0.0}}
-               >
-               <ScrollView style={styles.container}>
+               style={{flex: 1}}>
+                        <ScrollView style={styles.container}>
 
                     <FlatList
                         data={this.state.claimants}

@@ -27,7 +27,7 @@ export default class UserListItem extends React.Component {
 
               <View style={styles.cardRightContainer}>
                 <View style={styles.cardBtnContainer}>
-                    <Button title="Delete" onPress={this.deleteClaimant.bind(this)} color = 'black'></Button>
+                    <Button title="Delete" color='#111EC6' onPress={this.deleteClaimant.bind(this)}></Button>
                 </View>
               </View>
             </View>
@@ -46,11 +46,12 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     backgroundColor: '#FFFFFF',
-    borderWidth: 1,
+    borderRadius:20,
+    borderWidth: 3,
     borderBottomWidth: 3,
   },
   btnContainer: {
-    margin: 20,
+    margin: 20, 
     width: 200,
   },
   cardLeftContainer: {
@@ -65,3 +66,4 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end'
   }
 });
+

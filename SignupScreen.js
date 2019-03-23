@@ -105,7 +105,6 @@ static navigationOptions = () => ({
        <View style={styles.btnContainer}>
          <Button
           title="Sign Up"
-          color = 'black'
           disabled={this.state.disabled}
           onPress={this._onSignup}
          />

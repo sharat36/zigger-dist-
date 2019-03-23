@@ -16,6 +16,13 @@ constructor(props){
     this.cuser = this.cuser[Object.keys(this.cuser)[0]];
 }
 
+static navigationOptions = () => ({
+  headerTintColor: 'white',
+  headerStyle: {
+    backgroundColor: 'black'
+  },
+});
+
  updateUnits(){
        this.setState({disabled: true});
        firebase.database().ref('distributors/'+this.uid).update({foodUnits:parseInt(this.state.numUnits)})
@@ -32,7 +39,7 @@ constructor(props){
     const cuser = JSON.parse(JSON.stringify(this.props.navigation.getParam('user')));
     return (
       <LinearGradient
-      colors={['#00FFFF', '#17C8FF', '#329BFF', '#4C64FF', '#6536FF', '#8000FF']}
+      colors={['#000428', '#004e92']}
       start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 0.0}}
       style={styles.container}
       >
@@ -53,7 +60,7 @@ constructor(props){
         <View style={styles.btnContainer}>
           <Button
                title="Update"
-               color = 'black'
+               color='#111EC6'
                onPress={() => this.updateUnits()}
           />
         </View>
@@ -61,7 +68,7 @@ constructor(props){
         <View style={styles.btnContainer}>
                <Button
                     title="List of Users"
-                    color = 'black'
+                    color='#111EC6'
                     onPress={this.nav2List.bind(this)}
                />
         </View>
